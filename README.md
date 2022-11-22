@@ -2,7 +2,7 @@
 
 This starter project is build using [Vue 3](https://vuejs.org/) and [Vite](https://vitejs.dev/). To help you build your project *faster*, this theme includes some dedicated accessible components (such as a keyboard accessible and responsive navigation) and several components coming from the [Accessible Vue Components](https://github.com/markteekman/accessible-vue-components) npm package. This theme also includes example pages, a blog with dynamic routes, a custom 404 page and many **Design System** utility classes, patterns and primatives (such as grids, buttons, lists, spacings, sizes and more).
 
-> _**NOTE:** This package is still in it's early stages of development, it's NOT recommended to start using it in production yet! This project is inspired by the Accessible Astro Components and will be developed in the same way, but for Vue._
+> _**NOTE:** This package is still in it's early stages of development, it's NOT recommended to start using it in production yet! This project is inspired by the Accessible Astro Starter and will be developed in the same way, but for Vue._
 
 [Live demo]() (coming soon)
 
