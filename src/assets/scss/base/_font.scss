@@ -26,8 +26,8 @@ body {
 
     &:hover,
     &:focus {
-      color: var(--action-color);
-      text-decoration: none;
+      color: var(--neutral-100);
+      text-decoration: underline;
     }
   }
 
