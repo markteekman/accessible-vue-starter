@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@vueuse/head": "^1.0.18",
+    "accessible-vue-components": "^0.1.3",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.25",
     "sass": "^1.56.1",
