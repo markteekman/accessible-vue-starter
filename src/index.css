@@ -7,17 +7,22 @@
   --font-family-special: "Open Sans", sans-serif;
   --text-color: #fff;
   --background-color: #242424;
+  --action-color: #42d392;
 }
 
 html,
-body {
+body,
+#app {
   height: 100%;
   overflow-x: hidden;
 }
 
-body {
+#app {
   display: flex;
   flex-direction: column;
+}
+
+body {
   color: var(--text-color);
   background-color: var(--background-color);
 }
