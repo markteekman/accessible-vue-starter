@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-family-default: "Open Sans", sans-serif;
+  --font-family-special: "Open Sans", sans-serif;
+  --text-color: #fff;
+  --background-color: #242424;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
