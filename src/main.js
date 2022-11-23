@@ -5,6 +5,7 @@ import App from './App.vue'
 import components from 'accessible-vue-components'
 
 // project specific and component specific styles
+import '~/assets/scss/globals.scss'
 import './style.css'
 import 'accessible-vue-components/dist/style.css'
 

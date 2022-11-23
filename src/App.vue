@@ -17,7 +17,7 @@ const count = ref(0)
         Vue Starter
     </MagicText>
     <i-carbon-accessibility-alt style="display: block; font-size: 10rem;" />
-    <button type="button" @click="count++">count is {{ count }}</button>
+    <button class="button" type="button" @click="count++">count is {{ count }}</button>
   </main>
 </template>
 
