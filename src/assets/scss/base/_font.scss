@@ -11,6 +11,8 @@ body {
   font-family: var(--font-family-default);
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
   text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   @include size-16;

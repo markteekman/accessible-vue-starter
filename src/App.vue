@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import IconAccessibility from '~icons/carbon/accessibility-alt'
 
 const count = ref(0)
@@ -9,15 +9,17 @@ const count = ref(0)
   <header>
     <SkipLinks />
   </header>
-  <main>
-    <MagicText>
-      <template #magic>
-        Accessible
-      </template>
-        Vue Starter
-    </MagicText>
-    <i-carbon-accessibility-alt style="display: block; font-size: 10rem;" />
-    <button class="button" type="button" @click="count++">count is {{ count }}</button>
+  <main id="main-content" class="container h-screen">
+    <div class="align-center gap-8">
+      <MagicText>
+        <template #magic>
+          Accessible
+        </template>
+          Vue Starter
+      </MagicText>
+      <i-carbon-accessibility-alt style="display: block; font-size: 10rem;" />
+      <button class="text-white button" type="button" @click="count++">count is {{ count }}</button>
+    </div>
   </main>
 </template>
 
