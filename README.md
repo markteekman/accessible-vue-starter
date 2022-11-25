@@ -4,7 +4,7 @@ This starter project is build using [Vue 3](https://vuejs.org/) and [Vite](https
 
 > _**NOTE:** This package is still in it's early stages of development, it's NOT recommended to start using it in production yet! This project is inspired by the Accessible Astro Starter and will be developed in the same way, but for Vue._
 
-[Live demo]() (coming soon)
+[Live demo](https://accessible-vue.dev)
 
 ## Getting started
 Run the following commands in your project folder to get started:
@@ -17,12 +17,12 @@ npm install && npm run dev
 - Accessible landmarks such as `header`, `main`, `footer`, `section` and `nav`
 - Outline focus indicator which works on dark and light backgrounds
 - Several `aria` attributes which provide a better experience for screen reader users
-- `SkipLinks.astro` component to skip to either the main menu or the main content *
-- `Navigation.astro` component with keyboard accessible (dropdown) navigation (arrow keys, escape key)
-- `ResponsiveToggle.astro` component with an accessible responsive toggle button for the mobile navigation
-- `DarkMode.astro` component toggle with accessible button and a user system preferred color scheme *
-- `Header.astro` component included in the `DefaultLayout.astro` layout
-- `Footer.astro` component included in the `DefaultLayout.astro` layout
+- `SkipLinks.vue` component to skip to either the main menu or the main content *
+- `TheNavigation.vue` component with keyboard accessible (dropdown) navigation (arrow keys, escape key)
+- `ResponsiveToggle.vue` component with an accessible responsive toggle button for the mobile navigation
+- `DarkMode.vue` component toggle with accessible button and a user system preferred color scheme *
+- `Header.vue` component included in the `DefaultLayout.astro` layout
+- `Footer.vue` component included in the `DefaultLayout.astro` layout
 - `.sr-only` utility class for screen reader only text content (hides text visually)
 - `prefers-reduced-motion` disables animations for users that have this preference turned on
 
@@ -30,6 +30,5 @@ npm install && npm run dev
 
 ## Extra features
 
-- `blog.astro` and `posts/[id].astro` demonstrate the use of dynamic routes and provide a basic blog
 - `404.astro` provides a custom 404 error page which you can adjust to your needs
 - [Accessible Vue Components](https://github.com/markteekman/accessible-vue-components) package comes preinstalled with extra components such as Accordions, Modals and Notifications
