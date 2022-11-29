@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 
 const starsAnimation = () => {
   let index = 0
@@ -31,7 +31,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>
+  <h1 class="text-8xl">
     <span class="magic">
       <span class="magic-star">
         <svg viewBox="0 0 512 512">
