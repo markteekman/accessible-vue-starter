@@ -1,8 +1,12 @@
+<script setup>
+import IconAccessibility from '~icons/carbon/accessibility-alt'
+</script>
+
 <template>
   <div class="container flex justify-between py-4">
     <div class="logo">
       <router-link to="/">
-        <img src="/vite.svg" alt="" />
+        <i-carbon-accessibility-alt class="block text-4xl" />
       </router-link>
     </div>
     <ul class="flex gap-4">
@@ -12,8 +16,9 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .router-link-active {
-  font-weight: bold;
+  color: white;
+  text-decoration: underline;
 }
 </style>
