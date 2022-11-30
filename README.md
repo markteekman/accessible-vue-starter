@@ -19,10 +19,10 @@ npm install && npm run dev
 - Several `aria` attributes which provide a better experience for screen reader users
 - `SkipLinks.vue` component to skip to either the main menu or the main content *
 - `TheNavigation.vue` component with keyboard accessible (dropdown) navigation (arrow keys, escape key)
-- `ResponsiveToggle.vue` component with an accessible responsive toggle button for the mobile navigation
-- `DarkMode.vue` component toggle with accessible button and a user system preferred color scheme *
-- `Header.vue` component included in the `DefaultLayout.astro` layout
-- `Footer.vue` component included in the `DefaultLayout.astro` layout
+- (coming soon) `ResponsiveToggle.vue` component with an accessible responsive toggle button for the mobile navigation
+- (coming soon) `DarkMode.vue` component toggle with accessible button and a user system preferred color scheme *
+- `TheHeader.vue` component included in the `default.vue` layout
+- `TheFooter.vue` component included in the `default.vue` layout
 - `.sr-only` utility class for screen reader only text content (hides text visually)
 - `prefers-reduced-motion` disables animations for users that have this preference turned on
 
@@ -30,8 +30,17 @@ npm install && npm run dev
 
 ## Extra features
 
+- (coming soon) Blog with dynamic routes
+- (coming soon) Forms using [FormKit](https://formkit.com/)
 - `404.astro` provides a custom 404 error page which you can adjust to your needs
 - [Accessible Vue Components](https://github.com/markteekman/accessible-vue-components) package comes preinstalled with extra components such as Accordions, Modals and Notifications
+- Design system utilities which includes a lot of utility classes, patterns and primitives such as grids, buttons, lists, spacings, sizes and more
+- Auto component registration using [Unplugin Vue Components](https://github.com/antfu/unplugin-vue-components)
+- Pages and auto routes using [Vite Plugin Pages](https://github.com/hannoeru/vite-plugin-pages)
+- Reusable layouts using [Vite Plugin Layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts)
+- Stores and statemanagement using [Pinia](https://pinia.vuejs.org/)
+- Icons provided by [Unplugin Icons](https://github.com/antfu/unplugin-icons)
+- [Tailwind CSS](https://tailwindcss.com/) for styling
 
 ## Getting started
 After cloning this repository to your local machine, use the following commands:
@@ -60,7 +69,7 @@ npm run preview
 *Exposes your `/dist` folder on a server for preview at [http://localhost:5000](https://localhost:5000).*
 
 ## Building your project
-The Vite template is designed to automate and enhance a lot of workflows, such as auto registration of components and routes, thanks to plugins such as [Unplugin Vue Components](https://github.com/antfu/unplugin-vue-components), [Unplugin Icons](https://github.com/antfu/unplugin-icons), [Vite Plugin Pages](https://github.com/hannoeru/vite-plugin-pages) and [Vite Plugin Vue Layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts), [Vue Router](https://router.vuejs.org/), [Tailwind CSS](https://tailwindcss.com/), [Pinia Stores](https://pinia.vuejs.org/) and [Vue Use](https://vueuse.org/).
+The Vite template is designed to automate and enhance a lot of workflows, such as auto registration of components and routes.
 
 ### /src/components
 This is where you build your components. Once you've made a component it's automatically globally available, without the need to import them in parent components.
