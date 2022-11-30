@@ -31,7 +31,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1 class="text-8xl">
+  <h1 class="text-7xl text-center">
     <span class="magic">
       <span class="magic-star">
         <svg viewBox="0 0 512 512">
