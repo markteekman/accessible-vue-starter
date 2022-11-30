@@ -13,9 +13,11 @@ defineProps({
 
 <template>
   <li class="card">
-    <slot />
-    <h3 class="text-lg">{{ title }}</h3>
-    <p class="text-g">{{ body }}</p>
+    <span class="icon">
+      <slot />
+    </span>
+    <h3 class="text-2xl">{{ title }}</h3>
+    <p class="text-lg">{{ body }}</p>
   </li>  
 </template>
 
@@ -28,17 +30,39 @@ defineProps({
   list-style: none;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  position: relative;
   padding: 2rem;
-  background-image: var(--accent-gradient);
-  background-size: 400%;
-  color: white;
   border-radius: 0.5rem;
-  background-position: 100%;
-  transition: background-position 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  color: white;
+  transition: 
+    opacity 0.5s ease-in-out,
+    filter 0.5s ease-in-out,
+    transform 0.5s ease-in-out,
 }
 
-svg {
+.card > * {
+  z-index: 2;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  background-image: var(--accent-gradient);
+  background-size: 800%;
+  background-position: 100%;
+  transition: color 0.4s ease-in-out, background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 0, 0, 0.1);
+  padding: 0.75rem;
   margin-bottom: 1rem;
+  border-radius: 6px;
 }
 
 h2 {
@@ -46,7 +70,10 @@ h2 {
 }
 
 .card:is(:hover, :focus-within) {
-  background-position: 0;
   @apply text-slate-900;
+}
+
+.card:is(:hover, :focus-within)::before {
+  background-position: 0;
 }
 </style>
