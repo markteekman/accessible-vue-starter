@@ -65,7 +65,7 @@ useHead({
   </div>
   <div class="container mt-32 mb-48 animate">
     <h2 class="text-center text-6xl mb-12">Features</h2>
-    <ul class="grid grid-cols-3 gap-8" ref="scrollRef">
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" ref="scrollRef">
       <BasicCard
         title="Accessibility"
         body="Landmarks, better focus-outline and skip-links navigation."
