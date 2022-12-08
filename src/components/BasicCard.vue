@@ -57,7 +57,7 @@ defineProps({
   background-image: var(--accent-gradient);
   background-size: 800%;
   background-position: 100%;
-  transition: color 0.4s ease-in-out, background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: color 0.4s ease-in-out, background-position 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .icon {
