@@ -17,6 +17,15 @@ import IconAccessibility from '~icons/carbon/accessibility-alt'
 </template>
 
 <style lang="scss" scoped>
+.logo a {
+  color: white;
+
+  &:hover,
+  &:focus {
+    color: var(--action-color);
+  }
+}
+
 .router-link-active {
   color: white;
   text-decoration: underline;
