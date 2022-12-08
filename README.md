@@ -106,3 +106,114 @@ import SkipLinks from 'accessible-vue-components'
   <SkipLinks />
 </template>
 ```
+
+## Build in design system utilities
+
+This starter contains some extra **Design System** like utility classes to aid in the global layout of your project. All of this can be found in the `src/assets/scss/base` directory, and compiles in the `src/assets/globals.scss` file. Using these primitives is totally optional, use or remove at your own preference :) What it contains:
+
+- Reset file to reset browser defaults and ensure everything looks good
+- Some basic font settings, such as responsive heading sizes
+- Color shades for your color pallet, rendered to the `:root` of your website as custom properties
+- Simple auto-grid setting using `display: grid` and a `data-attribute`
+- Basic styling for `a` tags, `ul` and `ol` lists
+
+### Alignment
+
+Alignment classes can be used to align elements in your HTML. There's `align-center`, `align-horizontal` and `align-vertical`.
+
+```html
+<div class="align-center">
+  <h1>Center me on the screen!</h1>
+</div>
+```
+
+### Animations
+
+There are a couple of basic animations which you can throw on your HTML elements like `blink`, `fade-in`, `pop-up` and `spin`. You can also use some animation delays to create different effects.
+
+```html
+<div data-animation="fade-in">
+  <p>I've got a fancy fade-in animation that starts right away.</p>
+</div>
+<div data-animation="fade-in" data-animation-delay="0.25s">
+  <p>I've got a fancy fade-in animation after 0.25s.</p>
+</div>
+<div data-animation="fade-in" data-animation-delay="0.5s">>
+  <p>I've got a fancy fade-in animation after 0.5s.</p>
+</div>
+```
+
+### Auto Grid
+
+Simply apply the `data-auto-grid` attribute on your parent `div` with a number from 2-6 (if you need more columns just tweak the for loop in `_auto-grid.scss`). The grid automatically creates new rows (this is how `display: grid` works by default).
+
+```html
+<div class="container" data-auto-grid="3">
+  <p>First column</p>
+  <p>Second column</p>
+  <p>Third column</p>
+</div>
+```
+
+You can also center the contents of the cell using the `data-grid-center` attribute. Use it together with `data-auto-grid`.
+
+```html
+<div class="container" data-auto-grid="3" data-grid-center>
+  <!-- ... -->
+</div>
+```
+
+### Borders
+
+Basic border utility mixin to use in your SCSS files. Simply import the mixin in your component and use it like this:
+
+```scss
+<style lang="scss">
+  .my-element {
+    @include border-medium(red);
+  }
+</style>
+```
+
+### Buttons
+
+A Button primitive to easily apply button styles to your `<button>` and `<a>` tags. Simply apply the class `button` to your element. There are different variations in colors (`color-secondary`, `color-info`, `color-success`, `color-warning`, `color-error`) which is primary by default, sizing (`size-tiny`, `size-large`, `size-huge`) which is medium by default and behavior (`behavior-full`) which stretches the button to 100% width.
+
+```html
+<a href="/" class="button color-success size-huge behavior-full">
+  Click me to go to space!
+</a>
+```
+
+### Colors
+
+You can setup your own color schemes in the `_colors.scss` file. You'll find a SCSS map, which gets printed inside `_root.scss` as custom properties. There are also several color utilities such as `text-primary-#` and `bg-neutral-#` based on all colors you've defined. `text-primary-#` should be used on a parent element to give the child's the respective color.
+
+```scss
+$colors: (
+  primary: (
+    100: hsl(262, 90%, 95%),
+    200: hsl(262, 100%, 88%),
+    300: hsl(262, 100%, 78%),
+    400: hsl(268, 82%, 60%),
+    500: hsl(273, 79%, 48%),
+  ),
+  // ...
+);
+```
+
+```html
+<div class="text-neutral-100 bg-neutral-900 space-32">
+  <p>Dark background with white text on it!</p>
+</div>
+```
+
+### Elevations
+
+Use elevations on your HTML elements to add a box shadow of different intensities. Use either `elevation-100`, `elevation-200`, `elevation-300`, `elevation-400` or `elevation-500`.
+
+```html
+<div class="space-32 radius-large elevation-400">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</div>
+```
