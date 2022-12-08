@@ -1,5 +1,9 @@
 <script setup>
 defineProps({
+  icon: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true
@@ -14,7 +18,7 @@ defineProps({
 <template>
   <li class="card">
     <span class="icon">
-      <slot />
+      {{ icon }}
     </span>
     <h3 class="text-2xl">{{ title }}</h3>
     <p class="text-lg">{{ body }}</p>
