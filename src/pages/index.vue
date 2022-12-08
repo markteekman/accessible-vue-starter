@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useHead } from '@vueuse/head'
 import { useProjectStore } from '~/stores/project'
 import { onIntersect } from '~/composables/onIntersect'
@@ -10,6 +10,21 @@ const store = useProjectStore()
 const newTagline = ref('')
 const observer = ref({})
 const scrollRef = ref({})
+
+const features = [
+  { icon: '♿', title: 'Accessible by default', body: 'Landmarks, better focus-outline and skip-links navigation.' },
+  { icon: '🔌', title: 'Accessible Components', body: 'Ready to use, accessible Vue components, provided by separate package.' },
+  { icon: '🌈', title: 'Tailwind CSS', body: 'A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90.' },
+  { icon: '⚡', title: 'Vite', body: 'Vite is a new build tool that significantly improves the frontend deovelopment experience.' },
+  { icon: '✨', title: 'Latest Vue', body: 'Uses the latest Vue features such as the Composition API and script setup.' },
+  { icon: '🧰', title: 'VueUse', body: 'A collection of essential Vue Composition API utilities.' },
+  { icon: '🍍', title: 'Pinia', body: 'State Management using Pinia Stores.' },
+  { icon: '📦', title: 'Auto Components', body: 'Components are automatically imported and registered using Unplugin Vue Components.' },
+  { icon: '😃', title: 'Icons', body: 'Unplugin Icons comes preinstalled with a bunch of icons out of the box.' },
+  { icon: '📂', title: 'Vite Pages', body: 'Automatic routing and code-splitting for your pages using Vite Plugin Pages.' },
+  { icon: '🗂', title: 'Vite Layouts', body: 'Create and reuse layouts for your pages using Vite Plugin Layouts.' },
+  { icon: '🧩', title: 'Design System', body: 'Use the included design system utilities to build your own components and layouts.' }
+]
 
 const handleSubmit = () => {
   store.updateProjectTagline(newTagline.value)
@@ -26,7 +41,7 @@ const onLeave = () => {
 
 onMounted (() => {
   observer.value = onIntersect(scrollRef.value, onEnter, onLeave, false, {
-    threshold: 0.35
+    threshold: 0.15
   })
 })
 
@@ -50,12 +65,11 @@ useHead({
         </template>
         {{ store.projectTagline.sub }}
       </MagicText>
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2 mt-12">
         <label for="favorite-pokemon" class="font-bold uppercase">Who's your favorite Pokémon?</label>
-        <input class="text-slate-900 p-2 rounded-md border-none text-lg" name="favorite-pokemon" type="text" v-model="newTagline">
+        <input class="text-white bg-transparent p-2 rounded-md border-solid text-lg" name="favorite-pokemon" type="text" v-model="newTagline">
         <button @click="handleSubmit" class="button">I choose you!</button>
       </div>
-      <button class="text-white button" type="button" @click="count++">Persistant count: {{ count }}</button>
     </div>
   </div>
   <div class="container">
@@ -66,60 +80,13 @@ useHead({
   <div class="container mt-32 mb-48 animate">
     <h2 class="text-center text-6xl mb-12">Features</h2>
     <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" ref="scrollRef">
-      <BasicCard
-        title="Accessibility"
-        body="Landmarks, better focus-outline and skip-links navigation."
-      >
-        <i-carbon-accessibility-alt class="block text-4xl" />
-      </BasicCard>
-      <BasicCard
-        title="Vite"
-        body="Vite is a new build tool that significantly improves the frontend development experience."
-      >
-        <i-carbon-accessibility-alt class="block text-4xl" />
-      </BasicCard>
-      <BasicCard
-        title="Tailwind CSS"
-        body="A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90."
-      >
-        <i-carbon-accessibility-alt class="block text-4xl" />
-      </BasicCard>
-      <BasicCard
-        title="VueUse"
-        body="A collection of essential Vue Composition API utilities."
-      >
-        <i-carbon-accessibility-alt class="block text-4xl" />
-      </BasicCard>
-      <BasicCard
-        title="Auto Components"
-        body="Components are automatically imported and registered using Unplugin Vue Components."
-      >
-        <i-carbon-accessibility-alt class="block text-4xl" />
-      </BasicCard>
-      <BasicCard
-        title="Icons"
-        body="Unplugin Icons comes preinstalled with a bunch of icons out of the box."
-      >
-        <i-carbon-accessibility-alt class="block text-4xl" />
-      </BasicCard>
-      <BasicCard
-        title="Vite Pages"
-        body="Automatic routing and code-splitting for your pages using Vite Plugin Pages."
-      >
-        <i-carbon-accessibility-alt class="block text-4xl" />
-      </BasicCard>
-      <BasicCard
-        title="Vite Layouts"
-        body="Create and reuse layouts for your pages using Vite Plugin Layouts."
-      >
-        <i-carbon-accessibility-alt class="block text-4xl" />
-      </BasicCard>
-      <BasicCard
-        title="Design System"
-        body="Use the included design system utilities to build your own components and layouts."
-      >
-        <i-carbon-accessibility-alt class="block text-4xl" />
-      </BasicCard>
+      <BasicCard 
+        v-for="feature in features"
+        :key="feature.title"
+        :icon="feature.icon"
+        :title="feature.title"
+        :body="feature.body"
+      />
     </ul>
   </div>
 </template>
