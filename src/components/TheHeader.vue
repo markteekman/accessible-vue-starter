@@ -1,6 +1,6 @@
 <template>
   <header>
-    <SkipLinks />
+    <SkipLinks>Hello</SkipLinks>
     <TheNavigation />
   </header>
 </template>
